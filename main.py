@@ -59,11 +59,9 @@ while game.level < 9:
     for item in lv[game.level - 1]:
         print(item)
           
-    # print(game.hidden_word())
     for ch in ul_word_list:
         print(ch + " ", end="")
 
-    # print("\n")
     print(correct_word_list)
     print("\n")
 
@@ -72,7 +70,7 @@ while game.level < 9:
 
     if game.level == 8:
         print("GAME OVER!!!!\n")
-        break
+        break 
     elif "_" not in ul_word_list:
         print("Grattis du klarde dig levande.")    
         break  
@@ -82,12 +80,9 @@ while game.level < 9:
         if guess in correct_word_list:
             result = "Rätt bokstav"
             
-            # ul_word_list.clear()
             for i in range(len(correct_word_list)):
                 if correct_word_list[i] == guess:
                     ul_word_list[i] = guess
-
-
         else:
             result = "Fel bokstav"
             game.level += 1
