@@ -23,39 +23,48 @@ class Hangman:
         
     def get_word(self):
         word = random.choice(word_list)
-        return word.upper()
+        cor_word_list = []
+        for ch in word:
+            cor_word_list.append(ch.upper())
+        return cor_word_list
 
     def print_level(self, level):
             for item in level:
                 print(item)
 
     def hidden_word(self):
-         uline_word = "_ " * self.word_length
-         return uline_word
+         uline_word = "_" * len(correct_word_list)
+         uline_word_list = []
+         for ch in uline_word:
+             uline_word_list.append(ch)
+         return uline_word_list
 
 def clear():
     os.system('cls')
 
-def update_ul_word(ch):
-    word = game.hidden_word().replace("_", ch)
-    return word
+
 
 
 game = Hangman(1)
 result = ""
-ul_word = game.hidden_word()
+guessed_letter = []
+correct_word_list = game.get_word()
+ul_word_list = game.hidden_word()
 
 while game.level < 9:
     clear()
-    print("Välkommen till Hangman!\n")
+    print("Välkommen till Hangman!")
+    print("Kategorin är länder i Europa\n")
 
     for item in lv[game.level - 1]:
         print(item)
           
     # print(game.hidden_word())
-    print(ul_word)
+    for ch in ul_word_list:
+        print(ch + " ", end="")
 
-    print(game.word)
+    # print("\n")
+    print(correct_word_list)
     print("\n")
 
     if result != "":
@@ -64,18 +73,19 @@ while game.level < 9:
     if game.level == 8:
         print("GAME OVER!!!!\n")
         break
+    elif "_" not in ul_word_list:
+        print("Grattis du klarde dig levande.")    
+        break  
     else:
         guess = input("Gissa en bokstav: ").upper()
-        if guess in game.word:
+        guessed_letter.append(guess)
+        if guess in correct_word_list:
             result = "Rätt bokstav"
             
-            ul_word = update_ul_word(guess)
-
-            # for i, ch in ul_word:
-            #     if ch == guess:
-            #         position_of_char.append(i)
-
-            # for ch in position_of_char:
+            # ul_word_list.clear()
+            for i in range(len(correct_word_list)):
+                if correct_word_list[i] == guess:
+                    ul_word_list[i] = guess
 
 
         else:

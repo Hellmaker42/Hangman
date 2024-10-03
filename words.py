@@ -1,9 +1,13 @@
 word_list = [
-    "skruvmejsel",
+    "england",
     "frankrike",
-    "stockholm",
-    "skidor",
-    "gitarr",
-    "blomma",
-    "karate"
+    "sverige",
+    "grekland",
+    "spanien",
+    "italien",
+    "tyskland",
+    "norge",
+    "rumänien",
+    "ungern",
+    "turkiet"
 ]
