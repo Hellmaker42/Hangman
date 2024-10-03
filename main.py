@@ -58,11 +58,12 @@ while game.level < 9:
 
     for item in lv[game.level - 1]:
         print(item)
-          
+
+    print("\n") 
+
     for ch in ul_word_list:
         print(ch + " ", end="")
 
-    print(correct_word_list)
     print("\n")
 
     if result != "":
@@ -70,6 +71,9 @@ while game.level < 9:
 
     if game.level == 8:
         print("GAME OVER!!!!\n")
+        print("Rätt ord var ", end="")
+        for ch in correct_word_list:
+            print(ch, end="")
         break 
     elif "_" not in ul_word_list:
         print("Grattis du klarde dig levande.")    

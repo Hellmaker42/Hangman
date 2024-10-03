@@ -9,5 +9,14 @@ word_list = [
     "norge",
     "rumänien",
     "ungern",
-    "turkiet"
+    "turkiet",
+    "belgien",
+    "cypern",
+    "danmark",
+    "finland",
+    "österrike",
+    "luxemburg",
+    "schweiz",
+    "slovakien",
+    "estland"
 ]
